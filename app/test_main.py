@@ -1,16 +1,21 @@
+import pytest
+
 from app.main import get_human_age
 
 
-def test_should_return_0_when_years_equals_0() -> None:
-    assert get_human_age(0, 0) == [0, 0]
-
-
-def test_should_return_0_years_when_years_equals_14() -> None:
-    assert get_human_age(14, 14) == [0, 0]
-
-
-def test_should_return_2_years_when_years_equals_24() -> None:
-    assert get_human_age(24, 24) == [2, 2]
+@pytest.mark.parametrize(
+    "cat_age, dog_age, result",
+    [
+        (0, 0, [0, 0]),
+        (14, 14, [0, 0]),
+        (15, 15, [1, 1]),
+        (23, 23, [1, 1]),
+        (24, 24, [2, 2]),
+        (27, 27, [2, 2]),
+    ]
+)
+def test_cat_and_dog_age(cat_age, dog_age, result) -> None:             #1
+    assert get_human_age(cat_age, dog_age) == result
 
 
 def test_should_return_3_and_2_when_years_equals_28() -> None:
