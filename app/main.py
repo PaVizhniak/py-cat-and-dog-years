@@ -1,7 +1,6 @@
 def get_human_age(cat_age: int, dog_age: int) -> list:
     result = [0, 0]
 
-
     if type(cat_age) is not int or type(dog_age) is not int:
         raise TypeError("Values must be integers")
 
@@ -37,5 +36,3 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
                     dog_age -= dog_age
 
     return result
-
-# print(get_human_age("100", 1001))

@@ -73,6 +73,9 @@ def test_cat_and_dog_age(
         (100, 100.1),
     ]
 )
-def test_should_raise_type_error_when_values_are_not_integers( cat_age: int, dog_age: int):
+def test_should_raise_type_error_when_values_are_not_integers(
+        cat_age: int,
+        dog_age: int
+) -> None:
     with pytest.raises(TypeError):
         get_human_age(cat_age, dog_age)
